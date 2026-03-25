@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nodriza | IA con ADN Humano</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'bosque': '#1A4332',
-                        'arena': '#F5F1E6',
-                        'arena-dark': '#E6D5B8',
-                        'piedra': '#5D5C61',
+                        'bosque': '#1A4332',    /* Verde Principal */
+                        'arena': '#F5F1E6',     /* Fondo Izquierdo */
+                        'arena-oscura': '#D6CDBA' /* Fondo Derecho */
                     },
                     fontFamily: {
                         'sans': ['Montserrat', 'sans-serif'],
@@ -24,105 +20,57 @@
             }
         }
     </script>
-    <style>
-        .shape-blob { border-radius: 40% 60% 30% 70% / 60% 30% 70% 40%; }
-        .bg-pattern {
-            background-image: radial-gradient(#1A4332 0.5px, transparent 0.5px);
-            background-size: 20px 20px;
-            opacity: 0.1;
-        }
-    </style>
 </head>
-<body class="bg-arena font-sans text-bosque min-h-screen overflow-x-hidden">
+<body class="bg-arena font-sans text-bosque">
 
     <div class="flex flex-col lg:flex-row min-h-screen">
         
-        <main class="lg:w-3/5 p-8 lg:p-16 flex flex-col justify-between relative">
+        <main class="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-between relative overflow-hidden">
             
-            <header class="flex justify-between items-center mb-16">
+            <nav class="flex justify-between items-center z-10">
                 <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-bosque rounded-full flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" class="w-8 h-8 fill-arena" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold tracking-tighter leading-none">NODRIZA</h1>
-                        <p class="text-[10px] uppercase tracking-widest opacity-70">Agencia Digital</p>
-                    </div>
+                    <div class="w-10 h-10 border-2 border-bosque rounded-full"></div>
+                    <h1 class="text-xl font-bold tracking-tighter">NODRIZA</h1>
                 </div>
-                <nav class="hidden md:flex gap-6 text-xs font-semibold uppercase tracking-widest">
-                    <a href="#" class="hover:text-piedra">Home</a>
-                    <a href="#" class="hover:text-piedra">About Us</a>
-                    <a href="#" class="hover:text-piedra">Contact</a>
-                    <a href="#" class="bg-bosque text-arena px-4 py-2 rounded-lg">Contact Us</a>
-                </nav>
-            </header>
+                <div class="hidden md:flex gap-6 text-[10px] font-bold uppercase tracking-widest">
+                    <a href="#">Home</a> <a href="#">About Us</a> <a href="#">Contact</a>
+                    <a href="#" class="bg-bosque text-arena px-4 py-2 rounded">Contact Us</a>
+                </div>
+            </nav>
 
-            <div class="mb-16 relative z-10">
-                <h2 class="font-serif text-5xl lg:text-7xl leading-[1.1] mb-6 max-w-2xl">
-                    INTELIGENCIA ARTIFICIAL <br>
-                    <span class="italic font-normal">CON ADN HUMANO</span>
+            <div class="relative z-10 mt-10">
+                <h2 class="font-serif text-5xl lg:text-7xl leading-tight">
+                    INTELIGENCIA ARTIFICIAL <br> <span class="italic font-normal text-4xl lg:text-6xl">CON ADN HUMANO</span>
                 </h2>
-                <p class="text-piedra max-w-md text-sm leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <p class="text-gray-600 max-w-sm text-sm mt-6">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-auto">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-black/5 hover:translate-y-[-5px] transition-all">
-                    <div class="w-8 h-8 mb-4 border border-bosque rounded-full flex items-center justify-center text-xs">✦</div>
-                    <h3 class="font-bold text-[13px] mb-2 uppercase">Agent IA</h3>
-                    <p class="text-[10px] text-piedra leading-tight">Implementación de agentes inteligentes personalizados.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 z-10">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-black/5">
+                    <h3 class="font-bold text-xs uppercase mb-2">Agent IA</h3>
+                    <p class="text-[9px] opacity-70">Sistemas inteligentes integrados.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-black/5 hover:translate-y-[-5px] transition-all">
-                    <div class="w-8 h-8 mb-4 border border-bosque rounded-full flex items-center justify-center text-xs">⚙</div>
-                    <h3 class="font-bold text-[13px] mb-2 uppercase text-xs">Automatización</h3>
-                    <p class="text-[10px] text-piedra leading-tight">Flujos de trabajo que eliminan procesos manuales.</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-black/5">
+                    <h3 class="font-bold text-xs uppercase mb-2">Automatización</h3>
+                    <p class="text-[9px] opacity-70">Flujos de trabajo fluidos.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-black/5 hover:translate-y-[-5px] transition-all">
-                    <div class="w-8 h-8 mb-4 border border-bosque rounded-full flex items-center justify-center text-xs uppercase">Code</div>
-                    <h3 class="font-bold text-[13px] mb-2 uppercase">Web/App</h3>
-                    <p class="text-[10px] text-piedra leading-tight">Desarrollo a medida con integración nativa de IA.</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-black/5 hover:translate-y-[-5px] transition-all">
-                    <div class="w-8 h-8 mb-4 border border-bosque rounded-full flex items-center justify-center text-xs uppercase">Huella</div>
-                    <h3 class="font-bold text-[13px] mb-2 uppercase">Marca Orgánica</h3>
-                    <p class="text-[10px] text-piedra leading-tight">Identidad visual que respira y conecta emocionalmente.</p>
-                </div>
-            </div>
 
-            <footer class="mt-16 flex justify-between items-end border-t border-bosque/10 pt-6">
-                <div class="text-[10px]">
-                    <p class="font-bold uppercase mb-1 tracking-tighter">Contacto Us</p>
-                    <p class="opacity-70">+90 123 456 980</p>
-                    <p class="opacity-70 text-bosque">info@nodriza.com</p>
-                </div>
-                <div class="flex gap-4 opacity-70">
-                    <span class="text-xs">Facebook</span>
-                    <span class="text-xs">X</span>
-                    <span class="text-xs">YouTube</span>
-                </div>
+            <footer class="flex justify-between items-end border-t border-black/5 pt-6 text-[10px] opacity-60">
+                <div><p>info@nodriza.com</p><p>+54 11 2378 0857</p></div>
+                <div class="flex gap-4 uppercase font-bold"><span>FB</span><span>LN</span><span>GH</span></div>
             </footer>
         </main>
 
-        <aside class="lg:w-2/5 bg-arena-dark relative overflow-hidden flex items-center justify-center p-8">
-            <div class="absolute inset-0 bg-pattern"></div>
-            
-            <div class="relative w-full max-w-md aspect-square bg-bosque rounded-full flex items-center justify-center shadow-2xl scale-110 lg:scale-125">
-                <div class="absolute inset-4 border-2 border-arena/20 rounded-full"></div>
-                <div class="absolute inset-8 border-4 border-arena/10 rounded-full"></div>
-                <div class="absolute inset-16 border border-arena/30 rounded-full"></div>
-                
-                <div class="w-1/2 h-1/2 bg-arena/5 shape-blob flex items-center justify-center border border-arena/40">
-                    <div class="w-4 h-4 bg-arena rounded-full animate-ping"></div>
-                </div>
+        <aside class="lg:w-2/5 bg-arena-oscura relative flex items-center justify-center border-l border-black/5">
+            <div class="w-80 h-80 lg:w-[400px] lg:h-[400px] bg-bosque rounded-full shadow-2xl flex items-center justify-center">
+                <div class="w-1/2 h-1/2 bg-arena/5 rounded-full border border-arena/30 animate-pulse"></div>
             </div>
-
-            <div class="absolute top-20 right-[-10%] w-64 h-64 bg-white/40 rounded-full blur-3xl"></div>
-            <div class="absolute bottom-10 left-[-10%] w-48 h-48 bg-white/30 rounded-full blur-2xl"></div>
-            
-            <div class="absolute bottom-20 right-20 bg-white p-8 rounded-full shadow-lg flex flex-col items-center">
-                <svg viewBox="0 0 24 24" class="w-12 h-12 fill-bosque mb-2" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-                <p class="text-[10px] font-bold uppercase tracking-widest">Identidad Orgánica</p>
+            <div class="absolute bottom-16 right-16 bg-white p-6 rounded-full shadow-xl flex flex-col items-center">
+                <div class="w-8 h-8 border border-bosque rounded-full mb-1"></div>
+                <p class="text-[8px] font-bold uppercase tracking-widest text-center">Identidad<br>Orgánica</p>
             </div>
         </aside>
 
