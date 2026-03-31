@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NODRIZA — Planes de Trabajo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#2E4E42;--verde-light:#3d6657;--verde-dark:#1e352c;--crema:#F7F1E6;--arena:#D2C4A7;--arena-dark:#b8a98a;--blanco:#FDFAF4;--font-title:'Playfair Display',Georgia,serif;--font-body:'Montserrat',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--crema);color:var(--verde-dark);line-height:1.7}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--verde-dark);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{font-family:var(--font-title);color:var(--crema);font-size:20px;font-weight:700;letter-spacing:0.06em;text-decoration:none}
+.nav-back{color:var(--arena);font-size:13px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:8px;letter-spacing:0.04em}
+.nav-back:hover{color:var(--crema)}
+.hero{min-height:40vh;background:linear-gradient(135deg,var(--verde-dark) 0%,var(--verde) 100%);display:flex;align-items:center;justify-content:center;padding:100px 40px 60px;text-align:center}
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--arena);margin-bottom:20px}
+.hero-title{font-family:var(--font-title);font-size:clamp(40px,6vw,72px);color:var(--crema);line-height:1.1;margin-bottom:16px}
+.hero-title em{font-style:italic;color:var(--arena)}
+.hero-sub{font-size:16px;color:rgba(247,241,230,0.7);max-width:560px;margin:0 auto}
+.container{max-width:1100px;margin:0 auto;padding:0 40px}
+.section{padding:80px 0}
+
+/* Plans */
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+@media(max-width:900px){.plans-grid{grid-template-columns:1fr}}
+.plan{background:var(--blanco);border-radius:24px;overflow:hidden;box-shadow:0 8px 40px rgba(46,78,66,0.1);position:relative;transition:transform 0.3s ease,box-shadow 0.3s ease}
+.plan:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(46,78,66,0.18)}
+.plan.featured{background:var(--verde);color:var(--crema);transform:scale(1.02)}
+.plan.featured:hover{transform:scale(1.02) translateY(-8px)}
+.plan-badge{position:absolute;top:20px;right:20px;background:var(--arena);color:var(--verde-dark);font-size:10px;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:0.08em;text-transform:uppercase}
+.plan-header{padding:40px 36px 28px}
+.plan-letter{font-family:var(--font-title);font-size:72px;font-weight:900;line-height:1;color:rgba(46,78,66,0.12);margin-bottom:-10px}
+.plan.featured .plan-letter{color:rgba(247,241,230,0.15)}
+.plan-name{font-family:var(--font-title);font-size:26px;font-weight:700;margin-bottom:6px}
+.plan-tagline{font-size:13px;opacity:0.65;margin-bottom:20px}
+.plan-includes-label{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--arena-dark);margin-bottom:8px}
+.plan.featured .plan-includes-label{color:var(--arena)}
+.plan-body{padding:0 36px 36px}
+.plan-divider{height:1px;background:rgba(210,196,167,0.3);margin:0 36px 28px}
+.plan.featured .plan-divider{background:rgba(247,241,230,0.15)}
+.plan-features{list-style:none;margin-bottom:28px}
+.plan-features li{padding:9px 0;border-bottom:1px solid rgba(210,196,167,0.2);font-size:13.5px;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.plan.featured .plan-features li{border-bottom-color:rgba(247,241,230,0.12)}
+.plan-features li .check{color:var(--verde);font-weight:700;flex-shrink:0;font-size:14px}
+.plan.featured .plan-features li .check{color:var(--arena)}
+.plan-includes{background:rgba(46,78,66,0.05);border-radius:12px;padding:16px;margin-bottom:24px}
+.plan.featured .plan-includes{background:rgba(247,241,230,0.08)}
+.plan-includes p{font-size:12px;opacity:0.7;font-style:italic}
+.plan-cta{display:block;text-align:center;padding:14px 28px;border-radius:40px;font-size:13px;font-weight:700;letter-spacing:0.04em;text-decoration:none;transition:all 0.2s}
+.plan-cta-outline{border:2px solid var(--verde);color:var(--verde);background:transparent}
+.plan-cta-outline:hover{background:var(--verde);color:var(--crema)}
+.plan-cta-filled{background:var(--crema);color:var(--verde-dark);border:2px solid transparent}
+.plan-cta-filled:hover{background:var(--arena)}
+.plan-cta-dark{background:var(--verde-dark);color:var(--crema);border:2px solid transparent}
+.plan-cta-dark:hover{background:var(--verde)}
+
+/* Comparison table */
+.comparison{margin-top:80px}
+.comp-title{font-family:var(--font-title);font-size:clamp(24px,3vw,36px);color:var(--verde-dark);margin-bottom:8px}
+.comp-title em{font-style:italic;color:var(--verde)}
+.comp-sub{font-size:14px;color:#555;margin-bottom:40px}
+.comp-table{width:100%;border-collapse:collapse;background:var(--blanco);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(46,78,66,0.08)}
+.comp-table th{background:var(--verde);color:var(--crema);padding:16px 20px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;text-align:left;font-weight:700}
+.comp-table th:first-child{width:45%}
+.comp-table td{padding:14px 20px;border-bottom:1px solid rgba(210,196,167,0.25);font-size:13px;color:#444}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:rgba(247,241,230,0.4)}
+.check-y{color:var(--verde);font-size:16px;font-weight:700}
+.check-n{color:#ccc;font-size:16px}
+
+.section-tag{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--verde);display:inline-flex;align-items:center;gap:10px;margin-bottom:16px}
+.section-tag::before{content:'';width:28px;height:1px;background:var(--verde)}
+.section-title{font-family:var(--font-title);font-size:clamp(28px,4vw,44px);color:var(--verde-dark);line-height:1.2;margin-bottom:12px}
+.section-title em{font-style:italic;color:var(--verde)}
+.back-bar{background:var(--verde-dark);padding:24px 40px;text-align:center;margin-top:80px}
+.back-bar a{color:var(--arena);text-decoration:none;font-size:13px;letter-spacing:0.06em}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand">NODRIZA</a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="hero-tag">Planes de Trabajo</div>
+    <h1 class="hero-title">Elige tu<br><em>Plan</em></h1>
+    <p class="hero-sub">Tres planes diseñados para acompañarte desde el lanzamiento hasta el ecosistema completo.</p>
+  </div>
+</div>
+
+<div class="container">
+<div class="section">
+  <div class="section-tag">Inversión</div>
+  <h2 class="section-title">Planes de <em>Crecimiento</em></h2>
+  <p style="font-size:15px;color:#555;max-width:600px;margin-bottom:8px;">Cada plan construye sobre el anterior. Comienza donde necesitas y escala cuando estés listo.</p>
+
+  <div class="plans-grid">
+
+    <!-- PLAN A -->
+    <div class="plan">
+      <div class="plan-header">
+        <div class="plan-letter">A</div>
+        <div class="plan-name">Plan A — Identidad</div>
+        <div class="plan-tagline">Construye tu base de marca</div>
+        <div class="plan-includes-label">Incluye</div>
+      </div>
+      <div class="plan-divider"></div>
+      <div class="plan-body">
+        <ul class="plan-features">
+          <li><span class="check">✓</span><strong>Diagnóstico de marca</strong> — análisis de audiencia y posicionamiento</li>
+          <li><span class="check">✓</span><strong>Identidad de marca</strong> — logo, colores, tipografía y sistema visual</li>
+          <li><span class="check">✓</span><strong>Manual de marca</strong> — guía completa de uso y aplicación</li>
+          <li><span class="check">✓</span><strong>Brief estratégico</strong> — documento maestro de tu marca</li>
+          <li><span class="check">✓</span>Voz y tono de comunicación</li>
+          <li><span class="check">✓</span>Kit básico de redes sociales (6 piezas)</li>
+          <li><span class="check">✓</span>2 rondas de revisión incluidas</li>
+        </ul>
+        <div class="plan-includes">
+          <div class="plan-includes-label" style="margin-bottom:6px;">Módulo incluido</div>
+          <p>01 · Identidad Orgánica</p>
+        </div>
+        <a href="index.html#cta" class="plan-cta plan-cta-outline">Empezar con Plan A</a>
+      </div>
+    </div>
+
+    <!-- PLAN B -->
+    <div class="plan featured">
+      <div class="plan-badge">Más Popular</div>
+      <div class="plan-header">
+        <div class="plan-letter">B</div>
+        <div class="plan-name">Plan B — Estrategia</div>
+        <div class="plan-tagline">Marca + Marketing + Negocio</div>
+        <div class="plan-includes-label">Todo del Plan A, más:</div>
+      </div>
+      <div class="plan-divider"></div>
+      <div class="plan-body">
+        <ul class="plan-features">
+          <li><span class="check">✓</span><em>Todo lo del Plan A incluido</em></li>
+          <li><span class="check">✓</span><strong>Estrategias de marketing digital</strong> — Meta Ads CBO/ABO, copywriting AIDA/PAS</li>
+          <li><span class="check">✓</span><strong>Plan de negocio</strong> — proyección financiera, KPIs y roadmap de crecimiento</li>
+          <li><span class="check">✓</span>Calendario de contenidos (30 días)</li>
+          <li><span class="check">✓</span>Kit completo de redes (15 piezas)</li>
+          <li><span class="check">✓</span>Análisis de competidores</li>
+          <li><span class="check">✓</span>Revisiones ilimitadas</li>
+        </ul>
+        <div class="plan-includes">
+          <div class="plan-includes-label" style="margin-bottom:6px;">Módulos incluidos</div>
+          <p>01 · Identidad Orgánica + Estrategia Digital</p>
+        </div>
+        <a href="index.html#cta" class="plan-cta plan-cta-filled">Activar Plan B</a>
+      </div>
+    </div>
+
+    <!-- PLAN C -->
+    <div class="plan">
+      <div class="plan-header">
+        <div class="plan-letter">C</div>
+        <div class="plan-name">Plan C — Ecosistema</div>
+        <div class="plan-tagline">Acompañamiento completo</div>
+        <div class="plan-includes-label">Todo del Plan A y B, más:</div>
+      </div>
+      <div class="plan-divider"></div>
+      <div class="plan-body">
+        <ul class="plan-features">
+          <li><span class="check">✓</span><em>Todo lo del Plan A y B incluido</em></li>
+          <li><span class="check">✓</span><strong>Acompañamiento en el proceso de identidad orgánica</strong> — te guiamos en cada decisión de marca</li>
+          <li><span class="check">✓</span>Sesiones de consultoría mensuales (3 meses)</li>
+          <li><span class="check">✓</span>Ajustes y optimizaciones continuas</li>
+          <li><span class="check">✓</span>Soporte prioritario WhatsApp/Email</li>
+          <li><span class="check">✓</span>Reportes de desempeño mensuales</li>
+          <li><span class="check">✓</span>Acceso a nuevas herramientas IA</li>
+        </ul>
+        <div class="plan-includes">
+          <div class="plan-includes-label" style="margin-bottom:6px;">Módulos incluidos</div>
+          <p>Identidad + Estrategia + Acompañamiento</p>
+        </div>
+        <a href="index.html#cta" class="plan-cta plan-cta-dark">Consultar Plan C</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Comparison table -->
+  <div class="comparison">
+    <h3 class="comp-title">Comparativa de <em>Planes</em></h3>
+    <p class="comp-sub">¿No sabes cuál elegir? Esta tabla te ayuda a decidir.</p>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Incluye</th>
+          <th>Plan A</th>
+          <th>Plan B</th>
+          <th>Plan C</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Diagnóstico de marca</td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Identidad visual completa</td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Manual de marca</td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Brief estratégico</td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Estrategia Meta Ads</td><td><span class="check-n">—</span></td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Plan de negocio</td><td><span class="check-n">—</span></td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Calendario de contenidos</td><td><span class="check-n">—</span></td><td><span class="check-y">✓</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Acompañamiento en identidad orgánica</td><td><span class="check-n">—</span></td><td><span class="check-n">—</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Consultoría mensual (3 meses)</td><td><span class="check-n">—</span></td><td><span class="check-n">—</span></td><td><span class="check-y">✓</span></td></tr>
+        <tr><td>Soporte prioritario</td><td><span class="check-n">—</span></td><td><span class="check-n">—</span></td><td><span class="check-y">✓</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</div>
+
+<div class="back-bar">
+  <a href="index.html">← Volver al inicio | NODRIZA Agencia Digital</a>
+</div>
+</body>
+</html>
