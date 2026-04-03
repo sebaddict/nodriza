@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guía de Deploy — Nodriza en Vercel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#2E4E42;--crema:#F7F1E6;--arena:#D2C4A7;--blanco:#FDFAF4;--gris:#6b7280;--font-title:'Playfair Display',serif;--font-body:'Montserrat',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-body);background:var(--crema);color:#1a1a1a;line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+header{background:var(--verde);padding:60px 0 48px;color:var(--crema)}
+header h1{font-family:var(--font-title);font-size:36px;font-weight:900;margin-bottom:12px}
+header p{color:var(--arena);font-size:15px;max-width:600px}
+.content{padding:48px 0}
+h2{font-family:var(--font-title);font-size:26px;color:var(--verde);margin:48px 0 20px;padding-bottom:10px;border-bottom:2px solid var(--arena)}
+h2:first-child{margin-top:0}
+h3{font-family:var(--font-title);font-size:18px;color:var(--verde);margin:28px 0 10px}
+p{font-size:14px;color:var(--gris);margin-bottom:14px}
+strong{color:#1a1a1a}
+.step{background:var(--blanco);border-radius:16px;padding:28px;margin:20px 0;border-left:4px solid var(--verde);position:relative}
+.step-num{position:absolute;top:-12px;left:20px;background:var(--verde);color:var(--crema);font-family:var(--font-title);font-size:14px;font-weight:700;padding:4px 14px;border-radius:100px}
+.step h3{margin-top:12px;margin-bottom:8px}
+.step p{margin-bottom:8px}
+.step img{max-width:100%;border-radius:8px;margin:12px 0;border:1px solid rgba(210,196,167,0.3)}
+.warning{background:#FFF3CD;border-left:4px solid #FFC107;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:13px;color:#856404}
+.success{background:#D4EDDA;border-left:4px solid #28A745;border-radius:8px;padding:16px 20px;margin:16px 0;font-size:13px;color:#155724}
+.file-list{background:var(--blanco);border-radius:12px;padding:20px;margin:16px 0;border:1px solid rgba(210,196,167,0.3)}
+.file-list code{font-family:monospace;font-size:13px;background:rgba(46,78,66,0.08);padding:2px 8px;border-radius:4px;color:var(--verde)}
+.file-list ul{list-style:none;margin-top:12px}
+.file-list li{font-size:13px;padding:4px 0;display:flex;align-items:center;gap:8px;color:var(--gris)}
+.file-list li::before{content:'📄';font-size:14px}
+footer{background:var(--verde);padding:28px 0;text-align:center;color:rgba(247,241,230,0.4);font-size:11px;margin-top:40px}
+</style>
+</head>
+<body>
+
+<header><div class="container">
+<h1>🚀 Guía de Deploy<br>Nodriza en Vercel</h1>
+<p>Paso a paso para subir tu sitio web a producción. Sin comandos, sin código, todo desde el navegador.</p>
+</div></header>
+
+<div class="content"><div class="container">
+
+<h2>Antes de empezar</h2>
+
+<p>Necesitás tener descargados los <strong>13 archivos HTML</strong> del sitio de Nodriza. Todos deben estar en una misma carpeta en tu computadora.</p>
+
+<div class="file-list">
+<strong>Tu carpeta debe verse así:</strong>
+<ul>
+<li><code>Nodriza.html</code> — Página principal</li>
+<li><code>modulo-identidad.html</code> — Módulo 01</li>
+<li><code>modulo-web.html</code> — Módulo 02</li>
+<li><code>modulo-automatizacion.html</code> — Módulo 03</li>
+<li><code>modulo-agentes.html</code> — Módulo 04</li>
+<li><code>plan-a.html</code> — Plan A</li>
+<li><code>plan-b.html</code> — Plan B</li>
+<li><code>plan-c.html</code> — Plan C</li>
+<li><code>metodologia-sprints-nodriza.html</code> — Metodología</li>
+<li><code>plan-accion-identidad.html</code> — Acción Identidad</li>
+<li><code>plan-accion-web.html</code> — Acción Web</li>
+<li><code>plan-accion-automatizacion.html</code> — Acción Automatización</li>
+<li><code>plan-accion-agentes.html</code> — Acción Agentes</li>
+</ul>
+</div>
+
+<div class="warning">⚠️ <strong>Importante:</strong> Si algún archivo falta, los links entre páginas no van a funcionar. Verificá que tengás los 13 antes de continuar.</div>
+
+<h2>Opción A — Subir a Vercel (Recomendado)</h2>
+<p>Vercel es gratuito, rápido y le da a tu sitio un dominio tipo <strong>nodriza.vercel.app</strong>. Luego podés conectar tu propio dominio.</p>
+
+<div class="step">
+<div class="step-num">Paso 1</div>
+<h3>Crear una cuenta en GitHub</h3>
+<p>1. Abrí tu navegador y andá a <strong>github.com</strong></p>
+<p>2. Hacé click en <strong>"Sign up"</strong> (botón verde arriba a la derecha)</p>
+<p>3. Poné tu email, creá una contraseña y elegí un nombre de usuario</p>
+<p>4. Seguí los pasos hasta que te diga que tu cuenta está lista</p>
+<div class="success">✅ Si ya tenés cuenta en GitHub, saltá al Paso 2.</div>
+</div>
+
+<div class="step">
+<div class="step-num">Paso 2</div>
+<h3>Crear un repositorio nuevo</h3>
+<p>1. Ya logueado en GitHub, hacé click en el botón <strong>"+"</strong> arriba a la derecha</p>
+<p>2. Elegí <strong>"New repository"</strong></p>
+<p>3. En "Repository name" escribí: <strong>nodriza</strong></p>
+<p>4. Dejá marcado <strong>"Public"</strong></p>
+<p>5. Hacé click en <strong>"Create repository"</strong> (botón verde abajo)</p>
+</div>
+
+<div class="step">
+<div class="step-num">Paso 3</div>
+<h3>Subir los archivos</h3>
+<p>1. En la página del repositorio que acabás de crear, vas a ver un link azul que dice <strong>"uploading an existing file"</strong> — hacé click ahí</p>
+<p>2. Arrastrá los <strong>13 archivos HTML</strong> desde tu carpeta al área que dice "Drag files here"</p>
+<p>3. Esperá a que se suban todos (vas a ver los 13 nombres listados)</p>
+<p>4. Abajo, donde dice "Commit changes", hacé click en el botón verde <strong>"Commit changes"</strong></p>
+<div class="warning">⚠️ Arrastrá los 13 archivos de una sola vez. No crees carpetas, todos deben estar sueltos en la raíz.</div>
+</div>
+
+<div class="step">
+<div class="step-num">Paso 4</div>
+<h3>Renombrar el archivo principal</h3>
+<p>Vercel busca un archivo llamado <strong>index.html</strong> como página de inicio. Nuestro archivo se llama Nodriza.html, así que necesitamos renombrarlo:</p>
+<p>1. En GitHub, hacé click en el archivo <strong>Nodriza.html</strong></p>
+<p>2. Hacé click en el ícono del <strong>lápiz</strong> (arriba a la derecha del código, dice "Edit this file")</p>
+<p>3. Arriba de todo, donde dice el nombre del archivo "Nodriza.html", <strong>borrá ese nombre</strong> y escribí: <strong>index.html</strong></p>
+<p>4. Hacé click en el botón verde <strong>"Commit changes"</strong></p>
+<p>5. En el popup que aparece, hacé click en <strong>"Commit changes"</strong> de nuevo</p>
+</div>
+
+<div class="step">
+<div class="step-num">Paso 5</div>
+<h3>Crear cuenta en Vercel</h3>
+<p>1. Abrí una pestaña nueva y andá a <strong>vercel.com</strong></p>
+<p>2. Hacé click en <strong>"Sign Up"</strong></p>
+<p>3. Elegí <strong>"Continue with GitHub"</strong> (la opción más fácil)</p>
+<p>4. Autorizá la conexión cuando te lo pida</p>
+<div class="success">✅ Si ya tenés cuenta en Vercel conectada a GitHub, saltá al Paso 6.</div>
+</div>
+
+<div class="step">
+<div class="step-num">Paso 6</div>
+<h3>Importar el proyecto</h3>
+<p>1. En el dashboard de Vercel, hacé click en <strong>"Add New..."</strong> → <strong>"Project"</strong></p>
+<p>2. Vas a ver tu repositorio <strong>"nodriza"</strong> en la lista — hacé click en <strong>"Import"</strong></p>
+<p>3. En la pantalla de configuración:</p>
+<p>&nbsp;&nbsp;&nbsp;• <strong>Framework Preset:</strong> dejá en "Other"</p>
+<p>&nbsp;&nbsp;&nbsp;• No toques nada más</p>
+<p>4. Hacé click en <strong>"Deploy"</strong></p>
+<p>5. Esperá 30-60 segundos. Vas a ver fuegos artificiales 🎉 cuando termine</p>
+</div>
+
+<div class="step">
+<div class="step-num">Paso 7</div>
+<h3>¡Tu sitio está online!</h3>
+<p>Vercel te va a dar una URL tipo: <strong>nodriza-xxxxx.vercel.app</strong></p>
+<p>1. Hacé click en la URL para ver tu sitio en vivo</p>
+<p>2. Navegá por todas las páginas para verificar que todo funcione</p>
+<p>3. Probá los links de módulos, planes y la metodología</p>
+<div class="success">✅ ¡Felicitaciones! Tu sitio de Nodriza está publicado en internet.</div>
+</div>
+
+<h2>Opción B — Dominio personalizado (opcional)</h2>
+<p>Si querés que tu sitio se vea en <strong>nodriza.com.ar</strong> o <strong>nodriza.agency</strong> en vez de vercel.app:</p>
+
+<div class="step">
+<div class="step-num">Paso 8</div>
+<h3>Comprar un dominio</h3>
+<p>1. Andá a <strong>namecheap.com</strong> o <strong>porkbun.com</strong></p>
+<p>2. Buscá el dominio que querés (ej: nodriza.agency)</p>
+<p>3. Compralo (cuesta entre $8 y $15 USD por año)</p>
+</div>
+
+<div class="step">
+<div class="step-num">Paso 9</div>
+<h3>Conectar el dominio a Vercel</h3>
+<p>1. En Vercel, andá a tu proyecto → <strong>"Settings"</strong> → <strong>"Domains"</strong></p>
+<p>2. Escribí tu dominio (ej: nodriza.agency) y hacé click en <strong>"Add"</strong></p>
+<p>3. Vercel te va a mostrar registros DNS que necesitás configurar. Van a ser algo como:</p>
+<div class="file-list">
+<strong>Registros DNS a configurar:</strong>
+<ul style="list-style:none">
+<li style="font-family:monospace;font-size:12px">📌 Tipo: <strong>A</strong> — Nombre: <strong>@</strong> — Valor: <strong>76.76.21.21</strong></li>
+<li style="font-family:monospace;font-size:12px">📌 Tipo: <strong>CNAME</strong> — Nombre: <strong>www</strong> — Valor: <strong>cname.vercel-dns.com</strong></li>
+</ul>
+</div>
+<p>4. Andá al panel de tu proveedor de dominio (Namecheap, Porkbun, etc.)</p>
+<p>5. Buscá la sección de <strong>"DNS"</strong> o <strong>"Domain DNS Settings"</strong></p>
+<p>6. Agregá los 2 registros que te dio Vercel</p>
+<p>7. Esperá entre 5 minutos y 24 horas (generalmente tarda menos de 1 hora)</p>
+<div class="success">✅ Vercel genera el certificado SSL automáticamente. Tu sitio va a tener el candadito verde 🔒 sin que hagas nada extra.</div>
+</div>
+
+<h2>Cómo actualizar el sitio después</h2>
+<p>Cada vez que necesites hacer cambios:</p>
+
+<div class="step">
+<div class="step-num">1</div>
+<h3>Subir los archivos actualizados</h3>
+<p>1. Andá a tu repositorio en <strong>github.com/tu-usuario/nodriza</strong></p>
+<p>2. Hacé click en <strong>"Add file"</strong> → <strong>"Upload files"</strong></p>
+<p>3. Arrastrá los archivos que cambiaste (no hace falta subir todos, solo los modificados)</p>
+<p>4. Hacé click en <strong>"Commit changes"</strong></p>
+<p>5. <strong>Vercel detecta el cambio automáticamente</strong> y actualiza tu sitio en ~30 segundos</p>
+<div class="success">✅ No necesitás hacer nada más. Vercel se encarga del deploy automático cada vez que subís archivos a GitHub.</div>
+</div>
+
+<h2>Troubleshooting (Problemas comunes)</h2>
+
+<div class="step">
+<h3>❌ "La página se ve en blanco"</h3>
+<p>Verificá que el archivo <strong>index.html</strong> exista en tu repositorio. Si se llama Nodriza.html, renombralo a index.html (ver Paso 4).</p>
+</div>
+
+<div class="step">
+<h3>❌ "Los links entre páginas no funcionan"</h3>
+<p>Todos los archivos HTML deben estar en la <strong>raíz del repositorio</strong> (sin carpetas). Verificá que no los hayas puesto dentro de una sub-carpeta.</p>
+</div>
+
+<div class="step">
+<h3>❌ "El dominio personalizado no funciona"</h3>
+<p>Los cambios de DNS pueden tardar hasta 24 horas. Si después de ese tiempo sigue sin funcionar, verificá que los registros DNS estén exactamente como te indicó Vercel.</p>
+</div>
+
+</div></div>
+
+<footer><div class="container">© 2026 Nodriza Agencia Digital — Guía de Deploy v1.0</div></footer>
+</body></html>
