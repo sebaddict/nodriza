@@ -11,15 +11,15 @@
 <meta property="og:site_name" content="Nodriza"/>
 <meta property="og:locale" content="es_AR"/>
 <meta property="og:title" content="Cuestionario — Automatización — NODRIZA"/>
-<meta property="og:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta property="og:description" content="Agencia digital que fusiona identidad organica y tecnologia: marca, desarrollo web, automatizacion y agentes digitales."/>
 <meta property="og:url" content="https://www.nodrizaestudio.com.ar/cuestionario-automatizacion.html"/>
 <meta property="og:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Nodriza — identidad organica potenciada por IA"/>
+<meta property="og:image:alt" content="Nodriza — identidad organica potenciada por tecnología"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Cuestionario — Automatización — NODRIZA"/>
-<meta name="twitter:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta name="twitter:description" content="Agencia digital que fusiona identidad organica y tecnologia: marca, desarrollo web, automatizacion y agentes digitales."/>
 <meta name="twitter:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -92,6 +92,19 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
   .plan-selector{grid-template-columns:1fr}
   .hero{padding:48px 0 36px}
 }
+
+/* Contacto en el pie: el mismo dato en todas las paginas, y enlazado de verdad.
+   Antes el correo era un marcador de Cloudflare que ya no se resuelve: se veia
+   "[email protected]" y el enlace no llevaba a ningun lado. */
+.footer-contacto { margin-top: 10px; font-size: .82rem; opacity: .8; }
+.footer-contacto a { color: inherit; text-decoration: none; }
+.footer-contacto a:hover { text-decoration: underline; }
+
+/* El color de este boton iba en el atributo style, que le gana a la hoja de
+   estilos: al pasar el cursor el fondo se oscurecia y el texto quedaba del
+   mismo color, invisible. */
+.btn-cuestionario { border-color: var(--arena); }
+.btn-cuestionario:hover { background: var(--verde); color: var(--crema); border-color: var(--verde); }
 </style>
 </head>
 <body>
@@ -239,7 +252,7 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
   </div>
 </section>
 
-<footer><div class="container" style="max-width:700px">© 2026 Nodriza Agencia Digital</div></footer>
+<footer><div class="container" style="max-width:700px"><p>&copy; 2026 Nodriza Agencia Digital. Todos los derechos reservados.</p><p class="footer-contacto"><a href="mailto:ssilva@estudionodriza.com.ar">ssilva@estudionodriza.com.ar</a><span aria-hidden="true"> &middot; </span><a href="https://wa.me/5491123780857" rel="noopener">+54 11 2378-0857</a><span aria-hidden="true"> &middot; </span>Buenos Aires, Argentina</p></div></footer>
 
 <script>
 const SUPABASE_URL = 'https://qjutbnewvkhdjmjdiges.supabase.co';

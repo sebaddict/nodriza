@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Cuestionario — Agentes de IA — NODRIZA</title>
+<title>Cuestionario — Agentes Digitales — NODRIZA</title>
 <link rel="icon" href="/favicon.ico" sizes="any"/>
 <link rel="apple-touch-icon" href="/apple-icon.png"/>
 <meta name="theme-color" content="#2E4E42"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Nodriza"/>
 <meta property="og:locale" content="es_AR"/>
-<meta property="og:title" content="Cuestionario — Agentes de IA — NODRIZA"/>
-<meta property="og:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta property="og:title" content="Cuestionario — Agentes Digitales — NODRIZA"/>
+<meta property="og:description" content="Agencia digital que fusiona identidad organica y tecnologia: marca, desarrollo web, automatizacion y agentes digitales."/>
 <meta property="og:url" content="https://www.nodrizaestudio.com.ar/cuestionario-agentes.html"/>
 <meta property="og:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Nodriza — identidad organica potenciada por IA"/>
+<meta property="og:image:alt" content="Nodriza — identidad organica potenciada por tecnología"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Cuestionario — Agentes de IA — NODRIZA"/>
-<meta name="twitter:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta name="twitter:title" content="Cuestionario — Agentes Digitales — NODRIZA"/>
+<meta name="twitter:description" content="Agencia digital que fusiona identidad organica y tecnologia: marca, desarrollo web, automatizacion y agentes digitales."/>
 <meta name="twitter:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -92,6 +92,19 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
   .plan-selector{grid-template-columns:1fr}
   .hero{padding:48px 0 36px}
 }
+
+/* Contacto en el pie: el mismo dato en todas las paginas, y enlazado de verdad.
+   Antes el correo era un marcador de Cloudflare que ya no se resuelve: se veia
+   "[email protected]" y el enlace no llevaba a ningun lado. */
+.footer-contacto { margin-top: 10px; font-size: .82rem; opacity: .8; }
+.footer-contacto a { color: inherit; text-decoration: none; }
+.footer-contacto a:hover { text-decoration: underline; }
+
+/* El color de este boton iba en el atributo style, que le gana a la hoja de
+   estilos: al pasar el cursor el fondo se oscurecia y el texto quedaba del
+   mismo color, invisible. */
+.btn-cuestionario { border-color: var(--arena); }
+.btn-cuestionario:hover { background: var(--verde); color: var(--crema); border-color: var(--verde); }
 </style>
 </head>
 <body>
@@ -107,7 +120,7 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
 <section class="hero">
   <div class="container">
     <div class="hero-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
-    <h1>Cuestionario:<br>Agentes de IA</h1>
+    <h1>Cuestionario:<br>Agentes Digitales</h1>
     <p>Respondé estas preguntas para que podamos entender tu proyecto y diseñar la estrategia perfecta para vos.</p>
   </div>
 </section>
@@ -152,19 +165,19 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
         <textarea id="problema" rows="3" placeholder="¿Qué dolor o necesidad tiene tu marca hoy?" required></textarea>
       </div>
 
-      <h2 style="margin-top:40px">Preguntas específicas: Agentes de IA</h2>
+      <h2 style="margin-top:40px">Preguntas específicas: Agentes Digitales</h2>
       <p class="sub">Estas preguntas nos ayudan a entender mejor tus necesidades en este módulo.</p>
 
       
         <div class="form-group">
-          <label for="uso_ia">¿Usás IA actualmente en tu negocio?</label>
+          <label for="uso_ia">¿Usás tecnología o automatizaciones actualmente en tu negocio?</label>
           <select id="uso_ia" name="uso_ia" required>
             <option value="">Seleccioná una opción</option>
             <option value="Sí, ChatGPT/Claude regularmente">Sí, ChatGPT/Claude regularmente</option><option value="Algo, pero quiero ir más allá">Algo, pero quiero ir más allá</option><option value="No, es nuevo para mí">No, es nuevo para mí</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="caso_uso">¿Para qué te gustaría usar un agente de IA?</label>
+          <label for="caso_uso">¿Para qué te gustaría usar un agente digital?</label>
           <select id="caso_uso" name="caso_uso" required>
             <option value="">Seleccioná una opción</option>
             <option value="Atención al cliente 24/7">Atención al cliente 24/7</option><option value="Generación de contenido">Generación de contenido</option><option value="Análisis de datos">Análisis de datos</option><option value="Automatizar respuestas de email/WhatsApp">Automatizar respuestas de email/WhatsApp</option><option value="Todo lo anterior">Todo lo anterior</option>
@@ -242,7 +255,7 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
   </div>
 </section>
 
-<footer><div class="container" style="max-width:700px">© 2026 Nodriza Agencia Digital</div></footer>
+<footer><div class="container" style="max-width:700px"><p>&copy; 2026 Nodriza Agencia Digital. Todos los derechos reservados.</p><p class="footer-contacto"><a href="mailto:ssilva@estudionodriza.com.ar">ssilva@estudionodriza.com.ar</a><span aria-hidden="true"> &middot; </span><a href="https://wa.me/5491123780857" rel="noopener">+54 11 2378-0857</a><span aria-hidden="true"> &middot; </span>Buenos Aires, Argentina</p></div></footer>
 
 <script>
 const SUPABASE_URL = 'https://qjutbnewvkhdjmjdiges.supabase.co';

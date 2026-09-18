@@ -11,15 +11,15 @@
 <meta property="og:site_name" content="Nodriza"/>
 <meta property="og:locale" content="es_AR"/>
 <meta property="og:title" content="Diagnóstico — Método Raíz Viva — NODRIZA"/>
-<meta property="og:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta property="og:description" content="Agencia digital que fusiona identidad organica y tecnologia: marca, desarrollo web, automatizacion y agentes digitales."/>
 <meta property="og:url" content="https://www.nodrizaestudio.com.ar/metodo-punto01-diagnostico.html"/>
 <meta property="og:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Nodriza — identidad organica potenciada por IA"/>
+<meta property="og:image:alt" content="Nodriza — identidad organica potenciada por tecnología"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Diagnóstico — Método Raíz Viva — NODRIZA"/>
-<meta name="twitter:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta name="twitter:description" content="Agencia digital que fusiona identidad organica y tecnologia: marca, desarrollo web, automatizacion y agentes digitales."/>
 <meta name="twitter:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -35,6 +35,19 @@ footer{background:var(--verde-dark);padding:28px 0;text-align:center;color:rgba(
 .alt{background:var(--blanco);padding:80px 0}
 @media(max-width:768px){.hero{padding:80px 0 60px}.hero h1{font-size:36px}.dims{grid-template-columns:1fr}.props{grid-template-columns:1fr}.back-btn span{display:none}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.hero .tag,.hero-icon,.hero h1,.hero .desc{animation:fadeUp 0.6s ease both}.hero .tag{animation-delay:0.1s}.hero-icon{animation-delay:0.2s}.hero h1{animation-delay:0.3s}.hero .desc{animation-delay:0.4s}
+
+/* Contacto en el pie: el mismo dato en todas las paginas, y enlazado de verdad.
+   Antes el correo era un marcador de Cloudflare que ya no se resuelve: se veia
+   "[email protected]" y el enlace no llevaba a ningun lado. */
+.footer-contacto { margin-top: 10px; font-size: .82rem; opacity: .8; }
+.footer-contacto a { color: inherit; text-decoration: none; }
+.footer-contacto a:hover { text-decoration: underline; }
+
+/* El color de este boton iba en el atributo style, que le gana a la hoja de
+   estilos: al pasar el cursor el fondo se oscurecia y el texto quedaba del
+   mismo color, invisible. */
+.btn-cuestionario { border-color: var(--arena); }
+.btn-cuestionario:hover { background: var(--verde); color: var(--crema); border-color: var(--verde); }
 </style>
 </head>
 <body>
@@ -72,5 +85,5 @@ footer{background:var(--verde-dark);padding:28px 0;text-align:center;color:rgba(
   <p>Escribinos y en 24hs agendamos tu primer encuentro.</p>
   <a href="contacto.html" class="btn">Hablar con Nodriza →</a>
 </div></section>
-<footer><div class="container">© 2026 Nodriza Agencia Digital. Todos los derechos reservados.</div></footer>
+<footer><div class="container"><p>&copy; 2026 Nodriza Agencia Digital. Todos los derechos reservados.</p><p class="footer-contacto"><a href="mailto:ssilva@estudionodriza.com.ar">ssilva@estudionodriza.com.ar</a><span aria-hidden="true"> &middot; </span><a href="https://wa.me/5491123780857" rel="noopener">+54 11 2378-0857</a><span aria-hidden="true"> &middot; </span>Buenos Aires, Argentina</p></div></footer>
 </body></html>
