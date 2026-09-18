@@ -4,6 +4,23 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>NODRIZA — Agencia Digital | IA · Desarrollo · Marca Orgánica</title>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="/apple-icon.png"/>
+<meta name="theme-color" content="#2E4E42"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Nodriza"/>
+<meta property="og:locale" content="es_AR"/>
+<meta property="og:title" content="NODRIZA — Agencia Digital | IA · Desarrollo · Marca Orgánica"/>
+<meta property="og:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta property="og:url" content="https://www.nodrizaestudio.com.ar/"/>
+<meta property="og:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Nodriza — identidad organica potenciada por IA"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="NODRIZA — Agencia Digital | IA · Desarrollo · Marca Orgánica"/>
+<meta name="twitter:description" content="Agencia digital que fusiona identidad organica e inteligencia artificial: marca, desarrollo web, automatizacion y agentes de IA."/>
+<meta name="twitter:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ==========================================
@@ -905,6 +922,22 @@ footer {
   .metodo-raiz-vivaard.featured { transform: none; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* Acceso al portal privado de clientes. Discreto a proposito: no es una
+   llamada a la accion comercial, es la puerta para quien ya es cliente. */
+.nav-portal { position: relative; padding-left: 18px; opacity: .85; }
+.nav-portal::before {
+  content: ""; position: absolute; left: 0; top: 50%;
+  width: 9px; height: 7px; margin-top: -2px;
+  border: 1.5px solid currentColor; border-radius: 1px;
+}
+.nav-portal::after {
+  content: ""; position: absolute; left: 2px; top: 50%;
+  width: 5px; height: 5px; margin-top: -7px;
+  border: 1.5px solid currentColor; border-bottom: 0;
+  border-radius: 3px 3px 0 0;
+}
+.nav-portal:hover { opacity: 1; }
 </style>
 </head>
 <body>
@@ -933,7 +966,8 @@ footer {
         <li><a href="metodo-raiz-viva.html" class="nav-link">Método</a></li>
         <li><a href="#planes" class="nav-link">Planes</a></li>
         <li><a href="#identidad" class="nav-link">Nosotros</a></li>
-      </ul>
+      <li><a href="https://portal.nodrizaestudio.com.ar" class="nav-link nav-portal" rel="noopener">Portal clientes</a></li>
+        </ul>
       <a href="#cta" class="btn btn-primary nav-cta">Hablar con Nodriza</a>
       <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
         <span></span><span></span><span></span>
@@ -951,7 +985,8 @@ footer {
   <a href="#planes" onclick="document.getElementById('mobileMenu').classList.remove('open')">Planes</a>
   <a href="#identidad" onclick="document.getElementById('mobileMenu').classList.remove('open')">Nosotros</a>
   <a href="#cta" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
-</div>
+<a href="https://portal.nodrizaestudio.com.ar" rel="noopener" onclick="document.getElementById('mobileMenu').classList.remove('open')">Portal clientes</a>
+  </div>
 
 <!-- HERO -->
 <section id="hero">
@@ -1445,6 +1480,7 @@ footer {
           <li><a href="#planes">Planes & Precios</a></li>
           <li><a href="#identidad">Filosofía</a></li>
           <li><a href="#cta">Contacto</a></li>
+          <li><a href="https://portal.nodrizaestudio.com.ar" rel="noopener">Portal clientes</a></li>
         </ul>
       </div>
       <div>
