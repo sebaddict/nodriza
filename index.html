@@ -940,6 +940,94 @@ footer {
    mismo color, invisible. */
 .btn-cuestionario { border-color: var(--arena); }
 .btn-cuestionario:hover { background: var(--verde); color: var(--crema); border-color: var(--verde); }
+
+/* ==========================================
+   NODRIZA · CELULARES Y TABLETS
+   ==========================================
+
+   1. La página nunca puede ser más ancha que la pantalla. Si lo es, el
+      navegador del celular agranda su "lienzo" y todo lo que está fijo
+      —la barra de arriba, el menú— se estira y se va para afuera.
+   2. Lo que se toca con el dedo necesita 44px de alto. Menos que eso es
+      apuntar con precisión de mouse en una pantalla que no tiene mouse.
+   3. Los campos de formulario, 16px de letra: con menos, iOS hace zoom
+      solo al tocarlos y descoloca la página.
+   ========================================== */
+html, body { max-width: 100%; overflow-x: hidden; }
+@supports (overflow-x: clip) { html, body { overflow-x: clip; } }
+img, svg, video, canvas, iframe { max-width: 100%; }
+
+@media (max-width: 900px) {
+  .footer-contacto { font-size: .9rem; opacity: .9; line-height: 2; }
+  .footer-contacto a {
+    display: inline-block; padding: 8px 0; min-height: 44px;
+    line-height: 28px; text-decoration: underline; text-underline-offset: 3px;
+  }
+  input, select, textarea { font-size: 16px; }
+  a.btn, button, .btn { min-height: 44px; }
+}
+
+/* --- La portada: barra, menú y partículas --- */
+/* Las partículas van en un lienzo fijo. Si se dibuja más ancho que la
+   pantalla, arrastra a toda la página con él. */
+#particles-canvas { width: 100%; max-width: 100vw; left: 0; right: 0; }
+
+/* Las tres rayitas: un blanco de 44x44 de verdad, y alcanzable con teclado. */
+.hamburger {
+  width: 44px; height: 44px;
+  align-items: center; justify-content: center;
+  border: 0; background: none; border-radius: 50%;
+}
+.hamburger:focus-visible { outline: 2px solid var(--verde); outline-offset: 2px; }
+
+/* En tablet vertical los enlaces de arriba quedan de 15px de alto: imposibles
+   para un dedo. Desde 900px para abajo se usa el menú grande. */
+@media (max-width: 900px) {
+  .nav-links, .btn.nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+/* El menú grande, con lugar para desplazarse si la pantalla es baja. */
+.mobile-menu {
+  gap: 24px; padding: 88px 24px 40px;
+  overflow-y: auto; justify-content: flex-start;
+}
+.mobile-menu a {
+  font-size: clamp(24px, 7vw, 32px);
+  padding: 6px 0; min-height: 44px; display: flex; align-items: center;
+}
+.mobile-close {
+  position: absolute; top: 18px; right: 18px;
+  width: 44px; height: 44px; display: flex;
+  align-items: center; justify-content: center;
+}
+@media (max-width: 900px) {
+  /* Los enlaces de las tarjetas y del pie: alto de dedo, no de mouse. */
+  .service-link, .orbit-info-link,
+  a[href^="metodo-punto"], a[href^="modulo-"], a[href^="plan-"] {
+    display: inline-flex; align-items: center; min-height: 44px;
+  }
+  .footer-links a { display: inline-block; padding: 7px 0; min-height: 40px; line-height: 26px; }
+  .footer-links li { margin-bottom: 2px; }
+  .nav-logo { min-height: 44px; }
+  .footer-contact-item a, .footer-bottom a {
+    display: inline-block; padding: 8px 0; min-height: 40px; line-height: 24px;
+  }
+  .footer-contact-item { margin-bottom: 2px; }
+}
+
+/* En el celular la portada ya no tiene la ilustración al costado, así que
+   centrar el texto en una pantalla entera dejaba media pantalla en blanco:
+   había que desplazarse para leer el título. Ahora empieza arriba. */
+@media (max-width: 768px) {
+  #hero { min-height: auto; align-items: flex-start; padding-top: 104px; padding-bottom: 64px; }
+  .hero-inner { gap: 32px; }
+}
+
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(30px, 9vw, 36px); }
+  .stats-inner { gap: 24px; }
+}
+
 </style>
 </head>
 <body>
@@ -971,23 +1059,23 @@ footer {
       <li><a href="https://portal.nodrizaestudio.com.ar" class="nav-link nav-portal" rel="noopener">Portal clientes</a></li>
         </ul>
       <a href="#cta" class="btn btn-primary nav-cta">Hablar con Nodriza</a>
-      <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+      <button type="button" class="hamburger" aria-label="Abrir el menú" aria-controls="mobileMenu" aria-expanded="false" onclick="document.getElementById('mobileMenu').classList.add('open'); this.setAttribute('aria-expanded','true')">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
   </div>
 </nav>
 
 <!-- Mobile Menu -->
 <div id="mobileMenu" class="mobile-menu">
-  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
-  <a href="#servicios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
-  <a href="metodologia-sprints-nodriza.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Proceso</a>
-  <a href="metodo-raiz-viva.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Método</a>
-  <a href="#planes" onclick="document.getElementById('mobileMenu').classList.remove('open')">Planes</a>
-  <a href="#identidad" onclick="document.getElementById('mobileMenu').classList.remove('open')">Nosotros</a>
-  <a href="#cta" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
-<a href="https://portal.nodrizaestudio.com.ar" rel="noopener" onclick="document.getElementById('mobileMenu').classList.remove('open')">Portal clientes</a>
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">✕</button>
+  <a href="#servicios" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">Servicios</a>
+  <a href="metodologia-sprints-nodriza.html" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">Proceso</a>
+  <a href="metodo-raiz-viva.html" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">Método</a>
+  <a href="#planes" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">Planes</a>
+  <a href="#identidad" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">Nosotros</a>
+  <a href="#cta" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">Contacto</a>
+<a href="https://portal.nodrizaestudio.com.ar" rel="noopener" onclick="document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger').setAttribute('aria-expanded','false')">Portal clientes</a>
   </div>
 
 <!-- HERO -->
@@ -1362,7 +1450,7 @@ footer {
       <span class="tag">Empezamos Hoy</span>
       <h2 class="section-title">¿Listo para activar tu sistema Nodriza?</h2>
       <p class="section-subtitle">Escribinos y en menos de 24 horas te enviamos el diagnóstico inicial de tu marca. Sin compromiso, con toda la estrategia.</p>
-      <a href="mailto:ssilva@estudionodriza.com.ar" class="btn btn-cta">Hablar con Nodriza →</a>
+      <a href="mailto:ssilva@nodrizaestudio.com.ar" class="btn btn-cta">Hablar con Nodriza →</a>
     </div>
   </div>
 </section>
@@ -1487,7 +1575,7 @@ footer {
       </div>
       <div>
         <div class="footer-col-title">Contacto</div>
-        <div class="footer-contact-item"><span>&#9993;</span><span><a href="mailto:ssilva@estudionodriza.com.ar">ssilva@estudionodriza.com.ar</a></span></div>
+        <div class="footer-contact-item"><span>&#9993;</span><span><a href="mailto:ssilva@nodrizaestudio.com.ar">ssilva@nodrizaestudio.com.ar</a></span></div>
         <div class="footer-contact-item"><span>&#9742;</span><span><a href="https://wa.me/5491123780857" rel="noopener">+54 11 2378-0857</a></span></div>
         <div class="footer-contact-item"><span>📍</span><span>Buenos Aires, Argentina</span></div>
         <div class="footer-contact-item"><span>🕐</span><span>Lun–Vie 9:00–18:00 ART</span></div>
@@ -1531,8 +1619,8 @@ const ctx = canvas.getContext('2d');
 let particles = [];
 
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = document.documentElement.clientWidth;
+  canvas.height = document.documentElement.clientHeight;
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
@@ -1746,7 +1834,7 @@ function resetOrbit() {
 // ── Mobile menu ───────────────────────────
 document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
-    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open'); document.querySelector('.hamburger')?.setAttribute('aria-expanded','false');
   });
 });
 </script>

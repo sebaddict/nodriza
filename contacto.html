@@ -73,6 +73,39 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
    mismo color, invisible. */
 .btn-cuestionario { border-color: var(--arena); }
 .btn-cuestionario:hover { background: var(--verde); color: var(--crema); border-color: var(--verde); }
+
+/* ==========================================
+   NODRIZA · CELULARES Y TABLETS
+   ==========================================
+
+   1. La página nunca puede ser más ancha que la pantalla. Si lo es, el
+      navegador del celular agranda su "lienzo" y todo lo que está fijo
+      —la barra de arriba, el menú— se estira y se va para afuera.
+   2. Lo que se toca con el dedo necesita 44px de alto. Menos que eso es
+      apuntar con precisión de mouse en una pantalla que no tiene mouse.
+   3. Los campos de formulario, 16px de letra: con menos, iOS hace zoom
+      solo al tocarlos y descoloca la página.
+   ========================================== */
+html, body { max-width: 100%; overflow-x: hidden; }
+@supports (overflow-x: clip) { html, body { overflow-x: clip; } }
+img, svg, video, canvas, iframe { max-width: 100%; }
+
+@media (max-width: 900px) {
+  .footer-contacto { font-size: .9rem; opacity: .9; line-height: 2; }
+  .footer-contacto a {
+    display: inline-block; padding: 8px 0; min-height: 44px;
+    line-height: 28px; text-decoration: underline; text-underline-offset: 3px;
+  }
+  input, select, textarea { font-size: 16px; }
+  a.btn, button, .btn { min-height: 44px; }
+}
+
+/* NODRIZA · dedos en las páginas internas */
+@media (max-width: 900px) {
+  a[href="index.html"], .back-link, .btn-volver {
+    display: inline-flex; align-items: center; min-height: 44px;
+  }
+}
 </style>
 </head>
 <body>
@@ -170,11 +203,11 @@ footer{background:var(--verde-dark);padding:24px 0;text-align:center;color:rgba(
   </div>
 </section>
 
-<footer><div class="container" style="max-width:700px"><p>&copy; 2026 Nodriza Agencia Digital. Todos los derechos reservados.</p><p class="footer-contacto"><a href="mailto:ssilva@estudionodriza.com.ar">ssilva@estudionodriza.com.ar</a><span aria-hidden="true"> &middot; </span><a href="https://wa.me/5491123780857" rel="noopener">+54 11 2378-0857</a><span aria-hidden="true"> &middot; </span>Buenos Aires, Argentina</p></div></footer>
+<footer><div class="container" style="max-width:700px"><p>&copy; 2026 Nodriza Agencia Digital. Todos los derechos reservados.</p><p class="footer-contacto"><a href="mailto:ssilva@nodrizaestudio.com.ar">ssilva@nodrizaestudio.com.ar</a><span aria-hidden="true"> &middot; </span><a href="https://wa.me/5491123780857" rel="noopener">+54 11 2378-0857</a><span aria-hidden="true"> &middot; </span>Buenos Aires, Argentina</p></div></footer>
 
 <script>
-const SUPABASE_URL = 'https://qjutbnewvkhdjmjdiges.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqdXRibmV3dmtoZGptamRpZ2VzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMjMxODAsImV4cCI6MjA4OTY5OTE4MH0.CjQa5BLBrXjEP-oIhHNPbeE20l72v2Dz30SqWJdmpV8';
+const SUPABASE_URL = 'https://pxxdlqagpzrhpnojtvfb.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4eGRscWFncHpyaHBub2p0dmZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzNzU0OTYsImV4cCI6MjEwMzk1MTQ5Nn0.zxEjkb6JGegOiwBECNKg_Ei396MV1iQdsfLP8ZIDCfM';
 
 async function submitForm() {
   const btn = document.getElementById('submitBtn');
@@ -193,17 +226,17 @@ async function submitForm() {
   }
   btn.disabled = true; btn.textContent = 'Enviando...';
   const data = {
-    nombre_completo: nombre, email: email, telefono: telefono,
+    nombreCompleto: nombre, email: email, telefono: telefono,
     empresa: document.getElementById('empresa').value.trim() || null,
-    sitio_web: document.getElementById('sitio_web').value.trim() || null,
+    sitioWeb: document.getElementById('sitio_web').value.trim() || null,
     modulo: 'contacto_general',
-    descripcion_negocio: document.getElementById('descripcion').value.trim() || null,
-    problema_principal: document.getElementById('necesidad').value || null,
+    descripcion: document.getElementById('descripcion').value.trim() || null,
+    problema: document.getElementById('necesidad').value || null,
     urgencia: document.getElementById('urgencia').value || null,
-    respuestas_modulo: { mensaje: document.getElementById('mensaje').value.trim() || null, fuente: 'hablar_con_nodriza' }
+    respuestas: { mensaje: document.getElementById('mensaje').value.trim() || null, fuente: 'hablar_con_nodriza' }
   };
   try {
-    const res = await fetch(SUPABASE_URL + '/rest/v1/nodriza_cuestionarios', {
+    const res = await fetch(SUPABASE_URL + '/rest/v1/PublicLead', {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Prefer': 'return=minimal' },
       body: JSON.stringify(data)
     });
