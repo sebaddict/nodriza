@@ -106,6 +106,43 @@ img, svg, video, canvas, iframe { max-width: 100%; }
     display: inline-flex; align-items: center; min-height: 44px;
   }
 }
+
+/* ==========================================
+   NODRIZA · LEGIBILIDAD EN EL TELEFONO
+   ==========================================
+   Las etiquetas en mayúsculas del sitio iban a 8, 9 y 10 píxeles con mucho
+   espaciado entre letras. En un monitor se leen; en un teléfono, no.
+   Acá solo se les pone un piso, de 900px para abajo. El escritorio no cambia.
+   ========================================== */
+@media (max-width: 900px) {
+  .nav-logo-text small, .top-nav-logo small,
+  .nav-logo-text span:last-child {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .tag, .hero .tag, .doc-header .tag, .badge, .badge-text,
+  .plan-sub, .plan-module, .kpi-label, .hub-tag,
+  .pmc .pt, .sd, .step-tag, .service-tag, .orbit-info-tag {
+    font-size: 11px !important;
+    line-height: 1.5;
+  }
+
+  /* Blancos para el dedo donde hoy no llegan a 44px. */
+  .back-btn { padding: 12px 20px; min-height: 44px; }
+  .pl, .pmc .pl { min-height: 44px; }
+
+  /* Un poco más de aire entre renglones: una columna angosta se lee mejor. */
+  .doc-body p, .sp, .pr p { line-height: 1.75; }
+}
+
+/* En los teléfonos más angostos, dos columnas de 145px no son dos columnas:
+   son dos tiras donde no entra ninguna palabra. */
+@media (max-width: 420px) {
+  .values-grid, .kpi-grid { grid-template-columns: 1fr !important; }
+  .kpi-grid { gap: 20px !important; }
+}
+
 </style>
 </head>
 <body>

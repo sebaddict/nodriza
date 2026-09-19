@@ -206,8 +206,10 @@ nav.scrolled {
 }
 .mobile-menu.open { display: flex; }
 .mobile-menu a {
-  font-family: var(--font-title); font-size: 32px;
-  font-weight: 700; color: var(--crema); opacity: 0.85;
+  font-family: var(--font-body);
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--crema); opacity: 0.85;
 }
 .mobile-close {
   position: absolute; top: 24px; right: 24px;
@@ -967,6 +969,19 @@ img, svg, video, canvas, iframe { max-width: 100%; }
   a.btn, button, .btn { min-height: 44px; }
 }
 
+/* Las cuatro tarjetas del Método: dos columnas en escritorio, una sola en el
+   celular. Antes iban en el atributo style —que le gana a esta hoja— y por eso
+   la segunda quedaba cortada por la mitad en el teléfono. */
+.metodo-preview-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 24px; max-width: 960px; margin: 0 auto;
+}
+@media (max-width: 860px) {
+  .metodo-preview-grid { grid-template-columns: 1fr; gap: 16px; }
+  .metodo-preview-grid > div { padding: 28px 24px !important; }
+  .metodo-preview-grid > div > div:first-child { font-size: 38px !important; }
+}
+
 /* --- La portada: barra, menú y partículas --- */
 /* Las partículas van en un lienzo fijo. Si se dibuja más ancho que la
    pantalla, arrastra a toda la página con él. */
@@ -988,12 +1003,19 @@ img, svg, video, canvas, iframe { max-width: 100%; }
 }
 /* El menú grande, con lugar para desplazarse si la pantalla es baja. */
 .mobile-menu {
-  gap: 24px; padding: 88px 24px 40px;
-  overflow-y: auto; justify-content: flex-start;
+  gap: 2px; padding: 80px 24px;
+  overflow-y: auto; justify-content: center;
 }
 .mobile-menu a {
-  font-size: clamp(24px, 7vw, 32px);
-  padding: 6px 0; min-height: 44px; display: flex; align-items: center;
+  font-size: 15px;
+  padding: 10px 0; min-height: 48px; display: flex; align-items: center;
+  justify-content: center; width: 100%; max-width: 320px;
+  border-bottom: 1px solid rgba(247,241,230,0.10);
+}
+.mobile-menu a:last-of-type {
+  border-bottom: 0; margin-top: 14px;
+  border: 1px solid rgba(210,196,167,0.45); border-radius: 100px;
+  color: var(--arena);
 }
 .mobile-close {
   position: absolute; top: 18px; right: 18px;
@@ -1026,6 +1048,43 @@ img, svg, video, canvas, iframe { max-width: 100%; }
 @media (max-width: 480px) {
   .hero-title { font-size: clamp(30px, 9vw, 36px); }
   .stats-inner { gap: 24px; }
+}
+
+
+/* ==========================================
+   NODRIZA · LEGIBILIDAD EN EL TELEFONO
+   ==========================================
+   Las etiquetas en mayúsculas del sitio iban a 8, 9 y 10 píxeles con mucho
+   espaciado entre letras. En un monitor se leen; en un teléfono, no.
+   Acá solo se les pone un piso, de 900px para abajo. El escritorio no cambia.
+   ========================================== */
+@media (max-width: 900px) {
+  .nav-logo-text small, .top-nav-logo small,
+  .nav-logo-text span:last-child {
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .tag, .hero .tag, .doc-header .tag, .badge, .badge-text,
+  .plan-sub, .plan-module, .kpi-label, .hub-tag,
+  .pmc .pt, .sd, .step-tag, .service-tag, .orbit-info-tag {
+    font-size: 11px !important;
+    line-height: 1.5;
+  }
+
+  /* Blancos para el dedo donde hoy no llegan a 44px. */
+  .back-btn { padding: 12px 20px; min-height: 44px; }
+  .pl, .pmc .pl { min-height: 44px; }
+
+  /* Un poco más de aire entre renglones: una columna angosta se lee mejor. */
+  .doc-body p, .sp, .pr p { line-height: 1.75; }
+}
+
+/* En los teléfonos más angostos, dos columnas de 145px no son dos columnas:
+   son dos tiras donde no entra ninguna palabra. */
+@media (max-width: 420px) {
+  .values-grid, .kpi-grid { grid-template-columns: 1fr !important; }
+  .kpi-grid { gap: 20px !important; }
 }
 
 </style>
@@ -1200,7 +1259,7 @@ img, svg, video, canvas, iframe { max-width: 100%; }
       <div class="stat-item" id="statModulos">
         <div class="stat-number" id="counterModulos">4</div>
         <div class="stat-label stat-interactive" onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">
-          Módulos Activos <span style="font-size:10px;opacity:0.7;display:block;margin-top:2px;cursor:pointer;">▶ Ver Servicios</span>
+          Módulos Activos <span style="font-size:11px;opacity:0.8;display:block;margin-top:4px;cursor:pointer;">▶ Ver Servicios</span>
         </div>
       </div>
     </div>
@@ -1464,7 +1523,7 @@ img, svg, video, canvas, iframe { max-width: 100%; }
 <h2 class="section-title">Método Raíz Viva</h2>
 <p class="section-subtitle">De la raíz a la forma. Un proceso de 4 puntos que empieza por la escucha profunda y llega a la presencia digital coherente.</p>
 </div>
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:960px;margin:0 auto">
+<div class="metodo-preview-grid">
 
   <!-- 01 Diagnóstico -->
   <div style="background:var(--blanco);border-radius:20px;padding:40px;border:1px solid rgba(46,78,66,0.08);">
