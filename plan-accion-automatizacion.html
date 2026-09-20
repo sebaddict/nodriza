@@ -165,6 +165,75 @@ img, svg, video, canvas, iframe { max-width: 100%; }
   .kpi-grid { gap: 20px !important; }
 }
 
+
+/* ==========================================
+   NODRIZA · ESCALA DE TEXTO
+   ==========================================
+   Cuatro tamanos, uno por papel. Antes el mismo papel aparecia a 11, 12, 13,
+   14, 15, 16 y 17px segun la pagina, con seis interlineados distintos
+   (1,50 · 1,60 · 1,70 · 1,75 · 1,80 · 1,85). Medido pagina por pagina.
+
+     entrada  17 / 1,80   la bajada que sigue a un titulo
+     cuerpo   15 / 1,75   el texto corrido
+     apoyo    14 / 1,65   lo que vive dentro de una tarjeta o una lista
+     legal    12 / 1,60   el pie de pagina
+
+   Va marcada como obligatoria a proposito: es la escala del sistema y tiene
+   que ganarle a las reglas sueltas de cada pagina, que son las que habian
+   dejado el mismo texto de siete tamanos distintos. No toca ningun titulo ni
+   ninguna etiqueta en mayusculas.
+   ========================================== */
+
+/* — entrada — */
+body .section-subtitle,
+body .hero-subtitle,
+body .doc-header p,
+body p.desc,
+body p.intro {
+  font-size: 17px !important; line-height: 1.8 !important;
+}
+
+/* — cuerpo — */
+body .doc-body p,
+body .step-body p,
+body .phase p,
+body .success-msg p,
+body p.sp,
+body p.sub,
+body .cta-bar p,
+body .identidad-text p,
+body .container > p {
+  font-size: 15px !important; line-height: 1.75 !important;
+}
+
+/* — apoyo: dentro de tarjetas y listas — */
+body .pr p,
+body .card p,
+body .service-card-desc,
+body .hub-desc,
+body .step-desc,
+body .value-desc,
+body .prop-for,
+body .feat span,
+body .dim span,
+body .prop-item,
+body .service-features li,
+body .pmc li,
+body .sc li,
+body .del-list li,
+body .plan-features li,
+body td {
+  font-size: 14px !important; line-height: 1.65 !important;
+}
+
+/* — legal: el pie. Va ultimo para que gane sobre `cuerpo`. — */
+body footer p,
+body .footer-bottom p,
+body .footer-tagline,
+body footer .container > p {
+  font-size: 12px !important; line-height: 1.6 !important;
+}
+
 </style>
 </head>
 <body>
