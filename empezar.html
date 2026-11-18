@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contanos tu proyecto — NODRIZA Agencia Digital</title>
+<link rel="canonical" href="https://www.nodrizaestudio.com.ar/empezar.html"/>
+<meta name="description" content="Contanos qué necesita tu marca. Te respondemos en 24 horas hábiles con los próximos pasos."/>
+<meta name="robots" content="noindex, follow"/>
+<link rel="icon" href="/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="/apple-icon.png"/>
+<meta name="theme-color" content="#2E4E42"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Nodriza"/>
+<meta property="og:locale" content="es_AR"/>
+<meta property="og:title" content="Contanos tu proyecto — NODRIZA Agencia Digital"/>
+<meta property="og:description" content="Contanos qué necesita tu marca. Te respondemos en 24 horas hábiles con los próximos pasos."/>
+<meta property="og:url" content="https://www.nodrizaestudio.com.ar/empezar.html"/>
+<meta property="og:image" content="https://www.nodrizaestudio.com.ar/nodriza-compartir.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="/seguimiento.js" defer></script>
+<style>
+:root{--verde:#2E4E42;--abismo:#1C3129;--crema:#F7F1E6;--hueso:#EDE6D9;--arena:#D2C4A7;--arena-oscura:#B8A98A;--tierra:#5C4B3B;--carbon:#2A2520;--tarjeta:#FDFBF7;--titulo:'Playfair Display',Georgia,serif;--texto:'Montserrat',Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{max-width:100%;overflow-x:hidden}
+@supports(overflow-x:clip){html,body{overflow-x:clip}}
+body{font-family:var(--texto);background:var(--crema);color:var(--carbon);font-size:15px;line-height:1.75}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.contenedor{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* barra */
+.barra{position:sticky;top:0;z-index:50;background:rgba(247,241,230,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(210,196,167,.35)}
+.barra .contenedor{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+.marca{display:flex;align-items:center;gap:12px}
+.marca img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.marca b{display:block;font-family:var(--titulo);font-weight:900;font-size:17px;letter-spacing:.04em;color:var(--verde);line-height:1.1}
+.marca small{display:block;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--arena-oscura)}
+.pildora{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 22px;border-radius:999px;font-weight:600;font-size:14px;border:1.5px solid var(--verde);color:var(--verde);transition:background .25s,color .25s}
+.pildora:hover{background:var(--verde);color:var(--crema)}
+.pildora.llena{background:var(--verde);color:var(--crema)}
+.pildora.llena:hover{background:var(--abismo);border-color:var(--abismo)}
+.pildora.clara{border-color:var(--arena);color:var(--crema)}
+.pildora.clara:hover{background:var(--crema);color:var(--verde);border-color:var(--crema)}
+
+/* portada */
+.portada{background:var(--verde);color:var(--crema);padding:80px 0 88px;position:relative;overflow:hidden}
+.portada .veta{position:absolute;right:-380px;top:-380px;width:640px;height:640px;opacity:.12;pointer-events:none}
+.etiqueta{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--arena)}
+.portada h1{font-family:var(--titulo);font-weight:900;font-size:clamp(34px,6vw,58px);line-height:1.08;margin:18px 0 22px;max-width:760px}
+.portada p{font-size:17px;line-height:1.8;color:var(--hueso);max-width:600px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.portada .pildora.llena{background:var(--crema);color:var(--verde);border-color:var(--crema)}
+.portada .pildora.llena:hover{background:var(--arena);border-color:var(--arena)}
+
+/* secciones */
+section.bloque{padding:80px 0}
+.bloque h2{font-family:var(--titulo);font-weight:900;font-size:clamp(26px,4vw,38px);line-height:1.15;color:var(--verde);margin:12px 0 14px;max-width:640px}
+.bloque .etiqueta{color:var(--tierra)}
+.bloque .entrada{font-size:17px;line-height:1.8;color:var(--tierra);max-width:620px}
+.grilla{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.tarjeta{background:var(--tarjeta);border:1px solid rgba(210,196,167,.5);border-radius:18px;padding:26px 22px}
+.tarjeta .num{font-family:var(--titulo);font-weight:900;font-size:15px;color:var(--arena-oscura)}
+.tarjeta h3{font-family:var(--titulo);font-weight:700;font-size:20px;line-height:1.25;color:var(--verde);margin:8px 0 8px}
+.tarjeta p{font-size:14px;line-height:1.65;color:var(--tierra)}
+.tarjeta a{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-size:13px;font-weight:600;color:var(--verde);text-decoration:underline;text-underline-offset:3px}
+
+.ritmo{background:var(--hueso)}
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.paso{border-top:2px solid var(--verde);padding-top:18px}
+.paso b{display:block;font-family:var(--titulo);font-size:22px;font-weight:900;color:var(--verde);margin-bottom:6px}
+.paso p{font-size:14px;line-height:1.65;color:var(--tierra)}
+.metodo{margin-top:44px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.metodo span{display:inline-flex;align-items:center;min-height:36px;padding:0 16px;border-radius:999px;background:var(--tarjeta);border:1px solid var(--arena);font-size:13px;font-weight:600;color:var(--verde)}
+.metodo i{font-style:normal;color:var(--arena-oscura)}
+.metodo a{font-size:13px;font-weight:600;color:var(--verde);text-decoration:underline;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center;margin-left:4px}
+
+/* formulario */
+.formulario{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.caja{background:var(--tarjeta);border:1px solid rgba(210,196,167,.5);border-radius:18px;padding:32px;box-shadow:0 2px 10px rgba(46,78,66,.05)}
+.campo{margin-bottom:20px}
+.campo label,.campo legend{display:block;font-size:13px;font-weight:600;color:var(--verde);margin-bottom:6px}
+.campo label span{font-weight:400;color:var(--tierra)}
+.campo input,.campo textarea{width:100%;min-height:48px;padding:12px 16px;border:1.5px solid rgba(210,196,167,.7);border-radius:12px;background:#fff;font-family:var(--texto);font-size:16px;color:var(--carbon);outline:none}
+.campo textarea{min-height:110px;resize:vertical}
+.campo input:focus,.campo textarea:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(46,78,66,.12)}
+fieldset{border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{margin:0;cursor:pointer}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid var(--arena);background:#fff;font-size:14px;font-weight:500;color:var(--verde);transition:all .2s}
+.chips input:checked+span{background:var(--verde);border-color:var(--verde);color:var(--crema)}
+.chips input:focus-visible+span{outline:2px solid var(--verde);outline-offset:2px}
+.enviar{width:100%;min-height:52px;border:0;border-radius:999px;background:var(--verde);color:var(--crema);font-family:var(--texto);font-weight:700;font-size:15px;cursor:pointer;transition:background .25s}
+.enviar:hover{background:var(--abismo)}
+.enviar:disabled{opacity:.55;cursor:not-allowed}
+.nota{font-size:12px;line-height:1.6;color:var(--tierra);margin-top:14px;text-align:center}
+.error{display:none;background:#FBF3E4;border:1px solid var(--arena-oscura);border-radius:12px;padding:12px 16px;margin-bottom:16px;font-size:14px;color:var(--tierra)}
+.listo{display:none;text-align:center;padding:24px 0}
+.listo h3{font-family:var(--titulo);font-size:28px;color:var(--verde);margin-bottom:10px}
+.listo p{color:var(--tierra);margin-bottom:22px}
+.oculto{display:none}
+.lista-check{list-style:none;margin-top:26px}
+.lista-check li{position:relative;padding-left:30px;margin-bottom:12px;color:var(--tierra)}
+.lista-check li::before{content:"";position:absolute;left:0;top:7px;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--verde);background:radial-gradient(circle,var(--verde) 3px,transparent 4px)}
+
+footer{background:var(--abismo);color:rgba(247,241,230,.7);padding:28px 0;text-align:center;font-size:12px;line-height:1.6}
+footer a{display:inline-block;min-height:44px;line-height:44px;color:inherit;text-decoration:underline;text-underline-offset:3px}
+
+.flotante{display:none}
+
+@media(max-width:900px){
+  .grilla{grid-template-columns:repeat(2,1fr)}
+  .formulario{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:640px){
+  .portada{padding:56px 0 64px}
+  section.bloque{padding:56px 0}
+  .grilla,.pasos{grid-template-columns:1fr}
+  .caja{padding:24px 18px}
+  .barra .pildora{display:none}
+  .acciones .pildora{flex:1 1 100%}
+  .flotante{display:inline-flex;position:fixed;right:16px;bottom:16px;z-index:40;width:56px;height:56px;border-radius:50%;background:var(--verde);color:var(--crema);align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(28,49,41,.3)}
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="contenedor">
+    <a class="marca" href="/index.html" aria-label="Nodriza, ir al inicio">
+      <img src="/img/nodriza-isotipo-nav.jpg" alt="" width="44" height="44"/>
+      <span><b>NODRIZA</b><small>Agencia digital</small></span>
+    </a>
+    <a class="pildora" href="https://wa.me/5491123780857?text=Hola%20Nodriza%2C%20quiero%20contarles%20mi%20proyecto" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main>
+  <section class="portada">
+    <svg class="veta" viewBox="0 0 200 200" aria-hidden="true" fill="none" stroke="#F7F1E6" stroke-width="1.2">
+      <circle cx="100" cy="100" r="20"/><circle cx="100" cy="100" r="36"/><circle cx="100" cy="100" r="52"/>
+      <circle cx="100" cy="100" r="68"/><circle cx="100" cy="100" r="84"/><circle cx="100" cy="100" r="99"/>
+    </svg>
+    <div class="contenedor">
+      <p class="etiqueta">Agencia digital · Zona Norte, Buenos Aires</p>
+      <h1>Una marca crece desde la raíz, no desde el logo.</h1>
+      <p>Identidad, web, automatización y agentes digitales, en ese orden, porque cada paso necesita lo que dejó el anterior. Contanos qué necesitás y en 24 horas hábiles te escribimos.</p>
+      <div class="acciones">
+        <a class="pildora llena" href="#contar">Contar mi proyecto</a>
+        <a class="pildora clara" href="https://wa.me/5491123780857?text=Hola%20Nodriza%2C%20quiero%20contarles%20mi%20proyecto" rel="noopener">Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="contenedor">
+      <p class="etiqueta">Qué hacemos</p>
+      <h2>Cuatro módulos. Elegís por dónde empezar.</h2>
+      <p class="entrada">Se contratan por separado o juntos. Si no sabés cuál necesitás, también está bien: para eso es la primera conversación.</p>
+      <div class="grilla">
+        <article class="tarjeta"><span class="num">01</span><h3>Identidad Orgánica</h3><p>Voz, paleta, tipografía y estrategia de contenido. La marca que ya sos, puesta en forma.</p><a href="/modulo-identidad.html">Ver el módulo</a></article>
+        <article class="tarjeta"><span class="num">02</span><h3>Desarrollo Web / App</h3><p>Sitios rápidos, pensados primero para el celular y para que cada botón lleve a una consulta.</p><a href="/modulo-web.html">Ver el módulo</a></article>
+        <article class="tarjeta"><span class="num">03</span><h3>Automatización</h3><p>Las tareas que repetís todas las semanas, resueltas por un flujo que avisa y deja registro.</p><a href="/modulo-automatizacion.html">Ver el módulo</a></article>
+        <article class="tarjeta"><span class="num">04</span><h3>Agentes Digitales</h3><p>Asistentes que responden y ordenan información con la voz y el criterio de tu marca.</p><a href="/modulo-agentes.html">Ver el módulo</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque ritmo">
+    <div class="contenedor">
+      <p class="etiqueta">Cómo trabajamos</p>
+      <h2>Sabés qué pasa en cada semana del proyecto.</h2>
+      <div class="pasos">
+        <div class="paso"><b>Sprints de 2 semanas</b><p>Cada sprint cierra con algo que se puede ver, probar y aprobar. No con un informe de avance.</p></div>
+        <div class="paso"><b>Devolución en 48 h</b><p>Cada entrega tiene respuesta en dos días hábiles, y todo queda en tu portal de cliente.</p></div>
+        <div class="paso"><b>Validación humana</b><p>La tecnología acelera. Las decisiones sobre tu marca las toman personas, con vos.</p></div>
+      </div>
+      <div class="metodo" aria-label="Método Raíz Viva">
+        <span>Diagnóstico</span><i>→</i><span>Identidad</span><i>→</i><span>Presencia Digital</span><i>→</i><span>Posicionamiento</span>
+        <a href="/metodo-raiz-viva.html">Conocer el Método Raíz Viva</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" id="contar">
+    <div class="contenedor formulario">
+      <div>
+        <p class="etiqueta">Primer paso</p>
+        <h2>Contanos tu proyecto.</h2>
+        <p class="entrada">Tres datos y lo que quieras sumar. Con eso preparamos la primera conversación.</p>
+        <ul class="lista-check">
+          <li>Te escribimos en 24 horas hábiles.</li>
+          <li>La primera conversación es para entender, no para venderte un plan.</li>
+          <li>Tus datos se usan solo para responderte.</li>
+        </ul>
+      </div>
+
+      <div class="caja">
+        <form id="formulario" novalidate>
+          <div class="error" id="error" role="alert"></div>
+          <div class="campo"><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" autocomplete="name" required/></div>
+          <div class="campo"><label for="email">Correo</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required/></div>
+          <div class="campo"><label for="telefono">WhatsApp o teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel" required/></div>
+          <fieldset class="campo">
+            <legend>¿Qué necesitás? <span style="font-weight:400;color:var(--tierra)">(podés marcar varios)</span></legend>
+            <div class="chips">
+              <label><input type="checkbox" name="necesidad" value="identidad"/><span>Marca</span></label>
+              <label><input type="checkbox" name="necesidad" value="web"/><span>Sitio web / app</span></label>
+              <label><input type="checkbox" name="necesidad" value="automatizacion"/><span>Automatizar tareas</span></label>
+              <label><input type="checkbox" name="necesidad" value="agentes"/><span>Agente digital</span></label>
+              <label><input type="checkbox" name="necesidad" value="no_se"/><span>Todavía no lo sé</span></label>
+            </div>
+          </fieldset>
+          <div class="campo"><label for="empresa">Marca o empresa <span>(opcional)</span></label><input id="empresa" name="empresa" autocomplete="organization"/></div>
+          <div class="campo"><label for="mensaje">Contanos en dos líneas <span>(opcional)</span></label><textarea id="mensaje" name="mensaje"></textarea></div>
+          <button class="enviar" id="enviar" type="submit">Enviar</button>
+          <p class="nota">Si preferís, escribinos por <a href="https://wa.me/5491123780857" rel="noopener" style="text-decoration:underline">WhatsApp</a> o a <a href="mailto:ssilva@nodrizaestudio.com.ar" style="text-decoration:underline">ssilva@nodrizaestudio.com.ar</a>.</p>
+        </form>
+        <div class="listo" id="listo" role="status">
+          <h3>Recibimos tu proyecto.</h3>
+          <p>En 24 horas hábiles te escribimos para coordinar la primera conversación.</p>
+          <a class="pildora" href="/metodo-raiz-viva.html">Mientras tanto, conocé el método</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor">
+    <p>&copy; 2026 Nodriza Agencia Digital · Buenos Aires, Argentina</p>
+    <p><a href="mailto:ssilva@nodrizaestudio.com.ar">ssilva@nodrizaestudio.com.ar</a> · <a href="https://wa.me/5491123780857" rel="noopener">+54 11 2378-0857</a></p>
+  </div>
+</footer>
+
+<a class="flotante" href="https://wa.me/5491123780857?text=Hola%20Nodriza%2C%20quiero%20contarles%20mi%20proyecto" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.2-1.8-1-.9.8a4 4 0 0 1-2.4-2.4l.8-.9-1-1.8L9 9.5Z"/></svg>
+</a>
+
+<script>
+(function () {
+  var URL_BASE = 'https://pxxdlqagpzrhpnojtvfb.supabase.co';
+  var CLAVE = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4eGRscWFncHpyaHBub2p0dmZiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzNzU0OTYsImV4cCI6MjEwMzk1MTQ5Nn0.zxEjkb6JGegOiwBECNKg_Ei396MV1iQdsfLP8ZIDCfM';
+  var f = document.getElementById('formulario');
+  var err = document.getElementById('error');
+  var btn = document.getElementById('enviar');
+  function falla(t) { err.textContent = t; err.style.display = 'block'; err.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+
+  f.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    var v = function (id) { return document.getElementById(id).value.trim(); };
+    var nombre = v('nombre'), email = v('email'), telefono = v('telefono');
+    if (!nombre || !email || !telefono) return falla('Completá nombre, correo y WhatsApp o teléfono.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return falla('Revisá el correo: parece que le falta algo.');
+    var necesidades = Array.prototype.map.call(f.querySelectorAll('input[name="necesidad"]:checked'), function (i) { return i.value; });
+    var datos = {
+      nombreCompleto: nombre, email: email, telefono: telefono,
+      empresa: v('empresa') || null,
+      modulo: necesidades.length === 1 && necesidades[0] !== 'no_se' ? necesidades[0] : 'contacto_general',
+      descripcion: v('mensaje') || null,
+      respuestas: { necesidades: necesidades, mensaje: v('mensaje') || null, fuente: 'landing_campana',
+                    origen: window.nodrizaOrigen ? window.nodrizaOrigen() : null }
+    };
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    try {
+      var res = await fetch(URL_BASE + '/rest/v1/PublicLead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: CLAVE, Authorization: 'Bearer ' + CLAVE, Prefer: 'return=minimal' },
+        body: JSON.stringify(datos)
+      });
+      if (!res.ok) throw new Error('estado ' + res.status);
+      if (window.nodrizaEvento) window.nodrizaEvento('Lead', { content_name: 'landing_campana' });
+      f.classList.add('oculto');
+      document.getElementById('listo').style.display = 'block';
+    } catch (x) {
+      falla('No pudimos enviarlo. Probá de nuevo o escribinos por WhatsApp al +54 11 2378-0857.');
+      btn.disabled = false; btn.textContent = 'Enviar';
+    }
+  });
+})();
+</script>
+</body>
+</html>
